@@ -29,7 +29,7 @@ func ReamindStr(a string, b string) string {
 	count := strings.Count(a, b)
 	return strings.Replace(a, b, "", count)
 }
-//문자열이 같은지 확인. 문자열뿐 아니라  int, float64형에대해서도  연산 가능
+//문자열이 같은지 확인. int, float64타입도 포함 ( 그외에는 x)
 func IsSame(a interface{}, b interface{}) bool {
 	switch aType := a.(type) {
 	case string:
@@ -46,7 +46,7 @@ func IsSame(a interface{}, b interface{}) bool {
 		return false
 	}
 }
-// 문자열 비교. a와 b문자열중 더 큰 문자열 리턴. ex) aaa > aab
+// 문자열 비교. a와 b문자열중 더 큰 문자열 리턴. ex) aaa < aab
 func IsBig(a string, b string) string {
 	result := strings.Compare(a, b)
 	if result > 0 {
